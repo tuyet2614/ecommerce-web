@@ -7,7 +7,6 @@
     display:block;
     width: 100%;
     height: 400px;
-    margin: 60px auto;
     margin-bottom: 30px;
 }
 // .Product {
@@ -24,34 +23,46 @@
 }
 
 .product {
+    margin-top: 20px;
     width: 20%;
 }
 
 .card {
-    width: 100%;
+    width: 90%;
     margin: 0;
+    border: 1px solid black;
+    background-color: #F9FAFA;
+}
+
+.card:hover {
+    cursor: pointer;
 }
 
 .images {
     
-    width: 90%;
+    width: 100%;
     height: 150px;
+    max-width: 300px;
+    display: block;
     object-fit: cover;
 }
 
 .card_header {
+    margin-top: 10px;
     text-align: center;
 }
 
 .btn {
-    border: none;
-}
-button {
-    border: none;
-    background-color: transparent;
+    margin: 10px auto;
+    width: 100%;
+    align-content: center;
+    .btn_add {
+        width: 100%;
+        
+    }   
 }
 
-button:hover {
+.btn:hover {
     cursor: pointer;
 }
 
@@ -65,6 +76,7 @@ button:hover {
 }
 
 .information {
+    margin-top: 30px;
     display: block;
     padding-top: 50px;
     .infor {
@@ -85,17 +97,14 @@ button:hover {
     }
 }
 
-.Categories{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+.branch {
+    margin-top: 20px;
 }
 
 .shops {
-    
-    background-color: red;
+    margin: 0;
     position: static !important;
-    
+    border-radius: 10px;
 }
 
 .about {

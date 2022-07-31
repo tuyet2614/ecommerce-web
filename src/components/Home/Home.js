@@ -7,6 +7,8 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { ImageList, ImageListItem } from '@mui/material';
 import Shop from '../../images/shop.png'
 import Foot from '../Foot/Foot';
+import { Link } from 'react-router-dom';
+
 
 function srcset(image, size, rows = 1, cols = 1) {
   return {
@@ -17,9 +19,10 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 
-const Home = () => {
-    const listItem = productData.getProducts(5)
+const Home = (props) => {
+    const {listItem, handleAddBaker, handleDetails} = props
     const Branchs = productData.getAllBranch()
+
     return (
         <div className='home'>
             <div className='home_container'>
@@ -29,8 +32,9 @@ const Home = () => {
             
             <div className='Products'>
                 {listItem.map((item)=> 
-                    <div className='product'>
-                        <div className='card' key={item.id}>
+                    <div className='product' key={item.id}>
+                        <div className='card' onClick={() => handleDetails(item.id)}>
+                        <Link to={`Products/${item.id}`}>
                             <div className='card_img'>
                                 <img src={item.image01} className="images" />
                             </div>
@@ -38,13 +42,15 @@ const Home = () => {
                                 <h4>{item.title}</h4>
                                 <p>{item.categorySlug}</p>
                                 <p className='price'>{item.price}</p>
-                                <div><button className='btn'><AddShoppingCartIcon /></button></div>
+                                {/* <div className='btn' onClick={() => handleAddBaker(item)}><AddShoppingCartIcon /></div> */}
                             </div>
                             
+                        </Link>
+                        <div className='btn' onClick={() => handleAddBaker(item)}><AddShoppingCartIcon className='btn_add'/></div>
                         </div>
                     </div>
                 )}
-                {/* // {listItems} */}
+                
             </div>
 
             <div className='panner'>
@@ -73,7 +79,7 @@ const Home = () => {
                         {Branchs.map((item) => (
                             <ImageListItem className="shops" key={item.img} cols={item.cols || 1} rows={item.row || 1}>
                                 <img 
-                                {...srcset(item.img, 125, item.row, item.cols)}
+                                {...srcset(item.img, 120, item.row, item.cols)}
                                 alt = {item.title}
                                 loading='lazy'
                                 className='shops'

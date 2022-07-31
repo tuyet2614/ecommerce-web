@@ -1,4 +1,5 @@
 import { green } from "@mui/material/colors"
+import { type } from "@testing-library/user-event/dist/type"
 import womenjacket from "../images/womenJacket1.jpg"
 
 const womenjacket1 = require("../images/womenJacket.png")
@@ -98,9 +99,11 @@ const products = [
         image02: womenjacket2,
         image03: womenjacket3,
         categorySlug: "ao-khoac",
-        colors: ["xanh", "bạc"],
+        colors: ["blue", "silver"],
         slug: "ao-khoac-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 3.5
     },
     {
         id: 2,
@@ -110,9 +113,11 @@ const products = [
         image02: menjacket2,
         image03: menjacket3,
         categorySlug: "ao-khoac",
-        colors: ["xanh", "bạc", "đen"],
+        colors: ["blue", "silver", "black"],
         slug: "ao-khoac-nam,",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: "Men",
+        star: 4
     },
     {
         id: 3,
@@ -122,21 +127,25 @@ const products = [
         image02: womenPants2,
         image03: womenPants3,
         categorySlug: "quan-nu",
-        colors: ["vàng", "trắng", "be"],
+        colors: ["yellow", "white", "orange"],
         slug: "quan-dai-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 3.5
     },
     {
         id: 4,
-        title: "Váy nữ đỏ",
+        title: "Váy nữ red",
         price: "180000",
         image01: redDress,
         image02: redDress2,
         image03: redDress3,
         categorySlug: "vay",
-        colors: [],
+        colors: ['red'],
         slug: "vay-nu-do",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 4
     },
     {
         id: 5,
@@ -146,9 +155,11 @@ const products = [
         image02: menShirt2,
         image03: menShirt3,
         categorySlug: "ao-somi",
-        colors: ["xanh", "trắng", "đỏ"],
+        colors: ["blue", "white", "red"],
         slug: "somi-nam",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: "Men",
+        star: 4.9
     },
     {
         id: 6,
@@ -158,9 +169,11 @@ const products = [
         image02: womenShirt2,
         image03: womenShirt3,
         categorySlug: "ao-somi",
-        colors: ["xanh", "hồng", "be"],
+        colors: ["blue", "pink", "orange"],
         slug: "somi-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 5
     },
     {
         id: 7,
@@ -170,9 +183,11 @@ const products = [
         image02: womenTshirt2,
         image03: womenTshirt3,
         categorySlug: "ao-thun",
-        colors: ["trắng 1", "trắng 2", "trắng 3"],
+        colors: ["white"],
         slug: "ao-thun-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 4.5
     },
     {
         id: 8,
@@ -182,9 +197,11 @@ const products = [
         image02: aodai2,
         image03: aodai3,
         categorySlug: "ao-dai",
-        colors: ["xanh", "trắng", "vàng"],
+        colors: ["blue", "white", "yellow"],
         slug: "ao-dai-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 5
     },
     {
         id: 9,
@@ -194,9 +211,11 @@ const products = [
         image02: shortnu2,
         image03: shortnu3,
         categorySlug: "quan-short",
-        colors: ["be", "đen", "trắng"],
+        colors: ["orange", "black", "white"],
         slug: "quan-short-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 4.5
     },
     {
         id: 10,
@@ -206,9 +225,11 @@ const products = [
         image02: skirt2,
         image03: skirt3,
         categorySlug: "vay",
-        colors: ["trắng", "xám"],
+        colors: ["white", "gray"],
         slug: "chan-vay-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 3.5
     },
     {
         id: 11,
@@ -218,9 +239,11 @@ const products = [
         image02: yembo2,
         image03: yembo3,
         categorySlug: "yem",
-        colors: ["xanh"],
+        colors: ["blue"],
         slug: "yem-bo-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 4.2
     },
     {
         id: 12,
@@ -230,9 +253,11 @@ const products = [
         image02: suit2,
         image03: suit3,
         categorySlug: "ao-suit",
-        colors: ["xanh", "đen", "đỏ"],
+        colors: ["blue", "black", "red"],
         slug: "ao-suit-nam",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: "Men",
+        star: 4
     },
     {
         id: 13,
@@ -242,9 +267,11 @@ const products = [
         image02: blazer2,
         image03: blazer3,
         categorySlug: "ao-khoac",
-        colors: ["đen"],
+        colors: ["black"],
         slug: "ao-blazer-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 4
     },
     {
         id: 14,
@@ -256,7 +283,9 @@ const products = [
         categorySlug: "swimsuit",
         colors: ["black"],
         slug: "swimt-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 4.3
     },
     {
         id: 15,
@@ -266,9 +295,11 @@ const products = [
         image02: aokhoacdai2,
         image03: aokhoacdai3,
         categorySlug: "ao-khoac",
-        colors: ["hồng", "trắng", "đen"],
+        colors: ["pink", "white", "black"],
         slug: "ao-khoac-nam",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: "Men",
+        star: 4
     },
     {
         id: 16,
@@ -278,9 +309,11 @@ const products = [
         image02: aolennu2,
         image03: aolennu3,
         categorySlug: "ao-len",
-        colors: ["be", "nâu"],
+        colors: ["orange", "brown"],
         slug: "ao-len-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 3.9
     },
     {
         id: 17,
@@ -290,9 +323,11 @@ const products = [
         image02: aolennam2,
         image03: aolennam3,
         categorySlug: "ao-len",
-        colors: ["xanh", "trắng"],
+        colors: ["blue", "white"],
         slug: "ao-len-nam",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: "Men",
+        star: 4.4
     },
     {
         id: 18,
@@ -302,9 +337,11 @@ const products = [
         image02: yemvay2,
         image03: yemvay3,
         categorySlug: "yem",
-        colors: ["đen"],
+        colors: ["black"],
         slug: "yem-vay-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 5
     },
     {
         id: 19,
@@ -314,9 +351,11 @@ const products = [
         image02: croptop2,
         image03: croptop3,
         categorySlug: "ao-croptop",
-        colors: ["xanh", "đen"],
+        colors: ["blue", "black"],
         slug: "ao-croptop-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 4.5
     },
     {
         id: 20,
@@ -326,9 +365,11 @@ const products = [
         image02: vaysomi2,
         image03: vaysomi3,
         categorySlug: "vay",
-        colors: ["đen", "nâu", "trắng"],
+        colors: ["black", "brown", "white"],
         slug: "vay-somi-nu",
-        size: ["s", "m", "l", "xl"]
+        size: ["S", "M", "L", "XL"],
+        Type: 'girl',
+        star: 4.6
     },
 ]
 
@@ -378,10 +419,18 @@ const getProducts = (count) => {
     return products.slice(start, start + count)
 }
 
+const getTypeProducts = (type) => {
+    if(type !== '')
+        return products.filter(item => item.Type === type)
+    else
+        return products
+}
+
 const productData = {
     getAllProducts,
     getProducts,
-    getAllBranch
+    getAllBranch,
+    getTypeProducts
 }
 
 

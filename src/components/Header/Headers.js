@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import {
   Link,
@@ -21,22 +21,14 @@ class Header extends React.Component {
             <div className="top">
                 <div className="left">
                     <div className="logo">
-                        <img src={logo}></img>
+                        <NavLink to= '/'><img src={logo}></img></NavLink>
+                        
                     </div>
                     <div className="topnav">
+                        <NavLink to='/Products' activeClassName="active">
+                            Products
+                        </NavLink>
                         
-                        <NavLink to='/men' activeClassName="active">
-                            Men
-                        </NavLink>
-                        <NavLink to='/women' activeClassName="active">
-                            Women
-                        </NavLink>
-                        <NavLink to='/kids' activeClassName="active">
-                            Kids
-                        </NavLink>
-                        <NavLink to='/shop' activeClassName="active">
-                            Shop
-                        </NavLink>
                         <NavLink to='/contact' activeClassName="active">
                             Contact us
                         </NavLink>
@@ -61,7 +53,8 @@ class Header extends React.Component {
                     </Paper>
 
                     <FavoriteBorderIcon />
-                    <WorkOutlineIcon />
+                    <NavLink to='/checkout'><ShoppingCartIcon /></NavLink>
+                    
 
                     <p>tuyet</p>
                     

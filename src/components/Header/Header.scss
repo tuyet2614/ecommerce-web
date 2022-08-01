@@ -15,7 +15,8 @@
 }
 
 .topnav {
-    margin: auto 0;
+    // margin: auto 20px;
+    margin-left: 30px;
 }
 
 img {
@@ -27,9 +28,9 @@ img {
     display: flex;
     box-sizing: border-box;
     
-    .logo {
-        width: 15%;
-        margin-left: 150px;
+    .Logo {
+        width: 100%;
+        margin-left: 50px;
     }
     .topnav {
         width: 85%;
@@ -62,6 +63,7 @@ a {
     text-decoration: none;
 }
 
-.user {
+.login {
     margin-top: 0;
+    background-color: transparent;
 }

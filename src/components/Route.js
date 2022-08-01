@@ -9,17 +9,24 @@ import Products from './Products/Products'
 import ProductDetail from './ProductDetail/ProductDetail'
 import FilterProducts from "./Products/FilterProducts";
 import Confirm from "./comfirm/Confirm";
+import Login from "./Login/Login";
+import Header from "./Header/Headers"
 const Routes = (props) => {
     const {listItems, listItem,branch, 
         handleAddProduct, handleDetail, DetailProducts, 
         handleAddManyProduct, bakers, handleChange,
-        handleDelete, btnCheckout, SearchProducts} = props
+        handleDelete, btnCheckout, SearchProducts, 
+        SearchOnClick, user, getUser} = props
     return(
             
             <Switch>
                 
               <Route path="/" exact>
-                <Home 
+                <Header 
+                  SearchOnClick = {SearchOnClick}
+                  user = {user}
+                />
+                <Home
                 listItem ={listItem}
                 Branchs = {branch}
                 handleAddBaker = {handleAddProduct}
@@ -27,6 +34,10 @@ const Routes = (props) => {
                 />
               </Route>
               <Route path="/Products" exact>
+                <Header 
+                  SearchOnClick = {SearchOnClick}
+                  user = {user}
+                />
                 <Products 
                 products = {listItems}
                 handleAddBaker = {handleAddProduct}
@@ -34,6 +45,10 @@ const Routes = (props) => {
                 />
               </Route>
               <Route path='/Products/:id'>
+                <Header 
+                  SearchOnClick = {SearchOnClick}
+                  user = {user}
+                />
                 <ProductDetail 
                 DetailProduct = {DetailProducts}
                 handleAddBaker = {handleAddManyProduct}
@@ -44,6 +59,10 @@ const Routes = (props) => {
               </Route>
 
                 <Route path='/searchProducts'>
+                  <Header 
+                    SearchOnClick = {SearchOnClick}
+                    user = {user}
+                  />
                     <FilterProducts 
                     searchProducts = {SearchProducts}
                     />
@@ -52,8 +71,18 @@ const Routes = (props) => {
               <Route path="/contact">
                 
               </Route>
+
+              <Route path={"/Login"}>
+                <Login 
+                getUser = {getUser}
+                />
+              </Route>
               
               <Route path="/checkout">
+                <Header 
+                  SearchOnClick = {SearchOnClick}
+                  user = {user}
+                />
                 <Checkout 
                 bakers = {bakers}
                 handleAddBakers = {handleChange}

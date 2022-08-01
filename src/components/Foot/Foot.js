@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material";
 import React from "react";
-import vector from '../../images/Vector.png'
+import logo from '../../images/logo.png'
 import './Foot.scss'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -12,7 +12,7 @@ class Foot extends React.Component {
         return (
             <div className="contain">
                 <div className="title">
-                    <img src={vector}/>
+                    <img src={logo} className='logo'/>
                     <h1>Globex</h1>
                 </div>
 

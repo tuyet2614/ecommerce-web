@@ -1,4 +1,4 @@
-import Header from './components/Header/Headers';
+
 import { useState, useEffect } from 'react';
 import './App.css';
 import {
@@ -18,6 +18,7 @@ function App() {
   const [SearchProducts, setSearchProducts] = useState([])
   const [color, setColor] = useState(undefined)
   const [size, setSize] = useState(undefined)
+  const [user, setUser] = useState('')
 
   const handleAddProduct = (product) => {
     const ProductExist = bakers.find((item) => item.id === product.id)
@@ -87,15 +88,16 @@ function App() {
     console.log (DetailProduct)
     setSearchProducts(DetailProduct)
   }
+  
+  const getUser = (value) => {
+    setUser(value)
+  }
 
   return (
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
           
-          <Header 
-            SearchOnClick = {SearchOnClick}
-          />
           <div className='Routes'>
             <Routes 
             listItems = {listItems}
@@ -110,6 +112,9 @@ function App() {
             handleDelete = {handleDelete}
             btnCheckout = {btnCheckout}
             SearchProducts = {SearchProducts}
+            SearchOnClick = {SearchOnClick}
+            user = {user}
+            getUser = {getUser}
             />
           </div>
           

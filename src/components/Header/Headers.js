@@ -16,18 +16,21 @@ import {
 
 
 const Header = (props) => {
-        const {SearchOnClick} = props
+        const {SearchOnClick, user} = props
         const [searchKey,setSearchkey] = useState('')
         return(
             <div className="top">
                 <div className="left">
-                    <div className="logo">
-                        <NavLink to= '/'><img src={logo}></img></NavLink>
+                    <div>
+                        <NavLink to= '/'><img src={logo} className="Logo"></img></NavLink>
                         
                     </div>
                     <div className="topnav">
                         <NavLink to='/Products' activeClassName="active">
                             Products
+                        </NavLink>
+                        <NavLink to='/Blog' activeClassName="active">
+                            Blog
                         </NavLink>
                         
                         <NavLink to='/contact' activeClassName="active">
@@ -57,8 +60,12 @@ const Header = (props) => {
                     <FavoriteBorderIcon />
                     <NavLink to='/checkout'><ShoppingCartIcon /></NavLink>
                     
-
-                    <p className="user">tuyet</p>
+                    <Link to={'/Login'}>
+                        <p className="login">
+                            {user === '' ? 'Login' : user}
+                        </p>
+                    </Link>
+                    
                     
                 </div>
                 

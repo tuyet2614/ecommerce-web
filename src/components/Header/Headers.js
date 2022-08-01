@@ -16,14 +16,8 @@ import {
 
 
 const Header = (props) => {
-        const {listItems,SearchOnClick} = props
-        const [test, setTest] = useState([])
+        const {SearchOnClick} = props
         const [searchKey,setSearchkey] = useState('')
-        // const SearchOnClick = () => {
-        //     const product =  listItems.filter((item) => item.title.toLowerCase().includes(searchKey))
-        //     setTest(product)
-        //     console.log(test)
-        // }
         return(
             <div className="top">
                 <div className="left">
@@ -64,7 +58,7 @@ const Header = (props) => {
                     <NavLink to='/checkout'><ShoppingCartIcon /></NavLink>
                     
 
-                    <p>tuyet</p>
+                    <p className="user">tuyet</p>
                     
                 </div>
                 

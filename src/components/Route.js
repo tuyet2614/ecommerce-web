@@ -8,6 +8,7 @@ import Checkout from './Checkout/Checkout'
 import Products from './Products/Products'
 import ProductDetail from './ProductDetail/ProductDetail'
 import FilterProducts from "./Products/FilterProducts";
+import Confirm from "./comfirm/Confirm";
 const Routes = (props) => {
     const {listItems, listItem,branch, 
         handleAddProduct, handleDetail, DetailProducts, 
@@ -59,6 +60,10 @@ const Routes = (props) => {
                 handleDelete = {handleDelete}
                 handleCheckout = {btnCheckout}
                 />
+              </Route>
+
+              <Route path='/confirm'>
+                <Confirm />
               </Route>
             </Switch>
         

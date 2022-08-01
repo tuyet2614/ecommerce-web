@@ -40,7 +40,7 @@ const Subtotal = (props) => {
                     className="checkout"
                     onClick={() => handleCheckout()}
                     >
-                        <Link to={'/done'}>Checkout</Link>
+                        <Link to={'/confirm'}>Checkout</Link>
                         
                     </button>
                 </div>

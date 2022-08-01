@@ -94,7 +94,6 @@ function App() {
         <header className="App-header">
           
           <Header 
-            listItems = {listItems}
             SearchOnClick = {SearchOnClick}
           />
           <div className='Routes'>

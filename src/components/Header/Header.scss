@@ -42,7 +42,6 @@ img {
 .right {
     width: 60%;
     display: flex;
-    // box-sizing: border-box;
     justify-content: space-between;
     p {
         margin-right: 150px;
@@ -61,4 +60,8 @@ img {
 a {
     color: #000000;
     text-decoration: none;
+}
+
+.user {
+    margin-top: 0;
 }

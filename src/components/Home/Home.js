@@ -38,6 +38,7 @@ const Home = (props) => {
                             <div className='card_img'>
                                 <img src={item.image01} className="images" />
                             </div>
+                        </Link>
                             <div className='card_header'>
                                 <h4>{item.title}</h4>
                                 <p>{item.categorySlug}</p>
@@ -45,7 +46,7 @@ const Home = (props) => {
                                 {/* <div className='btn' onClick={() => handleAddBaker(item)}><AddShoppingCartIcon /></div> */}
                             </div>
                             
-                        </Link>
+                        
                         <div className='btn' onClick={() => handleAddBaker(item)}><AddShoppingCartIcon className='btn_add'/></div>
                         </div>
                     </div>

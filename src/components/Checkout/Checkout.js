@@ -4,7 +4,8 @@ import Subtotal from '../Subtotal/Subtotal'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 const Checkout = (props) => {
-    const {bakers, handleAddBakers, handleDelete, handleCheckout} = props
+    const {bakers, handleAddBakers, handleDelete, handleCheckout, color} = props
+    console.log(color)
     return (
     <div className='Checkout'>
         <h2 className='checkout_title'>Your shopping Basket</h2>
@@ -17,6 +18,7 @@ const Checkout = (props) => {
                 <tr className='head'>
                     <th>images</th>
                     <th>title</th>
+                    <th>type</th>
                     <th>price</th>
                     <th>quantity</th>
                     <th>ProductTotal</th>
@@ -28,8 +30,13 @@ const Checkout = (props) => {
                             <td className='product-image '>
                                 <img src={item.image01} className="images" />
                             </td>
+                            <td className='product-type '>
+                                <h4>{item.title}</h4>
+                                
+                            </td>
+                            
                             <td className='product-title '>
-                                <h4>{item.title}</h4> 
+                                <h4>{item.colors}</h4> 
                             </td>
                             <td className='product-price '>
                                 {/* <p>{item.categorySlug}</p> */}

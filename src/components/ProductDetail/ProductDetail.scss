@@ -43,11 +43,11 @@ $colors: (
 }
 
 .left_items{
-    margin: 0;
+    margin: 15px;
     width: 50%;
     &_img_main {
         display: block;
-        width: 450px;
+        width: 350px;
         margin: 0 auto;
     }
 }
@@ -56,30 +56,31 @@ $colors: (
     margin-top: 2rem;
     flex-grow: 1;
     &_item {
+        margin-top: 15px;
         &__type {
 
         }
         &_list {
-            width: 200px;
+            width: 120px;
             display: flex;
             margin-left: 0;
             justify-content: flex-start;
             &_item {
                 margin: 0;
                 .circle {   
-                    width: 40px;
-                    height: 40px;
+                    width: 35px;
+                    height: 35px;
                     border-radius: 50%;
                     border: 2px solid $txt-second-color;
                     text-align: center;
                     
                     cursor: pointer;
-                    margin-left: 1rem;
+                    margin-left: 0.5rem;
                     &:hover {
                         border: 3px solid $main-color;
                     }    
                     &_size {
-                        margin-top: 8px;
+                        margin-top: 5px;
                     }
                 }
                 
@@ -88,6 +89,24 @@ $colors: (
                         // border-color: $main-color;
                     }
         }
+
+    }
+    &_review {
+        margin-top: 15px;
+        &_number {
+            margin-top: 0;
+            display: inline;
+        }
+        &_star {
+            margin: auto 5px;
+            color: red;
+            vertical-align: text-bottom;
+            
+        }
+    }
+
+    &_price {
+        margin-top: 15px;
     }
 }
 

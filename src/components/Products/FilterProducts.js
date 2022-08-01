@@ -1,19 +1,19 @@
 import React from 'react'
-import './Products.scss'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Link } from 'react-router-dom';
-
 import { useState } from 'react';
 
-const  Products = (props) => {
-    const {products, handleAddBaker, handleDetails} = props
+
+const FilterProducts = (props) => {
+    const {searchProducts, handleAddBaker, handleDetails} = props
     const [color, setColor] = useState(undefined)
 
     const [size, setSize] = useState(undefined)
-
+    console.log(searchProducts)
+    
   return (
     <div className='AllProducts'>
-        {products.map((item)=> 
+        {searchProducts.map((item)=> 
             <div className='product' key={item.id}>
                         <div className='card' onClick={() => handleDetails(item.id)}>
                         <Link to={`Products/${item.id}`}>
@@ -75,4 +75,4 @@ const  Products = (props) => {
   )
 }
 
-export default Products
+export default FilterProducts

@@ -6,16 +6,25 @@ import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
 
 const ProductDetail = (props) => {
-    const {DetailProduct} = props
+    const {DetailProduct, handleAddBaker} = props
     let {id} = useParams();
-
     const [color, setColor] = useState(undefined)
 
     const [size, setSize] = useState(undefined)
 
     const [quantity, setQuantity] = useState(1)
+    useEffect(() => {
+        
+        setQuantity(1)
+        setColor(undefined)
+        setSize(undefined)
+    }, [DetailProduct])
 
-
+      const getColor = (value) => {
+        DetailProduct.colors.map((item) => 
+        setColor(value) )
+    // setColor(ColorProduct)
+  }
 
     console.log(DetailProduct.star)
     return (
@@ -32,8 +41,9 @@ const ProductDetail = (props) => {
                 </div>
 
                 <div className="product_info_review">
-                    <Rating name="read-only" value={DetailProduct.star} readOnly  precision={0.1}/>
-                    {console.log(DetailProduct.star)}
+                    <p className="product_info_review_number">{DetailProduct.star}</p>
+                    <Rating name="read-only" value={DetailProduct.star} readOnly  precision={0.1} className="product_info_review_star"/>
+                    
                 </div>
 
                 <div className="product_info_price">
@@ -51,7 +61,9 @@ const ProductDetail = (props) => {
                             key={index}
                             className={`product_info_item_list_item ${color === item ? 'active':''}`}
                             >
-                                <div className={`circle bg-${item}`}></div>
+                                <div className={`circle bg-${item}`} onClick={() =>{getColor(item)}}>
+                                    {console.log(color)}
+                                </div>
 
                             </div>
                         ))}
@@ -76,6 +88,21 @@ const ProductDetail = (props) => {
                             </div>
                         ))}
                     </div>
+                </div>
+
+                <div className="product_info_quantity">
+                    <input 
+                        type='number' 
+                        defaultValue={1}
+                        min='1' 
+                        className='product-quantity' 
+                        onChange={(e) => {setQuantity(e.target.value)}}>
+                        
+                    </input>
+                </div>
+
+                <div className="product_info_btn" onClick={() => {handleAddBaker(DetailProduct, quantity)}}>
+                    <button>Add to cart</button>
                 </div>
                 
                

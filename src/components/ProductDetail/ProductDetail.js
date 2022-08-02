@@ -4,6 +4,7 @@ import './ProductDetail.scss'
 import { useState, useEffect } from "react";
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
+import { style } from "@mui/system";
 
 const ProductDetail = (props) => {
     const {DetailProduct, handleAddBaker} = props

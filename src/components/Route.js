@@ -52,9 +52,6 @@ const Routes = (props) => {
                 <ProductDetail 
                 DetailProduct = {DetailProducts}
                 handleAddBaker = {handleAddManyProduct}
-                // color = {color}
-                // size = {size}
-                // getColor = {getColor}
                 />
               </Route>
 
@@ -68,10 +65,6 @@ const Routes = (props) => {
                     />
                 </Route>
 
-              <Route path="/contact">
-                
-              </Route>
-
               <Route path={"/Login"}>
                 <Login 
                 getUser = {getUser}
@@ -82,9 +75,11 @@ const Routes = (props) => {
                 <Header 
                   SearchOnClick = {SearchOnClick}
                   user = {user}
+                  
                 />
                 <Checkout 
                 bakers = {bakers}
+                handleDetails = {handleDetail}
                 handleAddBakers = {handleChange}
                 handleDelete = {handleDelete}
                 handleCheckout = {btnCheckout}

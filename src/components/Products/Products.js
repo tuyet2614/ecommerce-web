@@ -7,9 +7,6 @@ import { useState } from 'react';
 
 const  Products = (props) => {
     const {products, handleAddBaker, handleDetails} = props
-    const [color, setColor] = useState(undefined)
-
-    const [size, setSize] = useState(undefined)
 
   return (
     <div className='AllProducts'>
@@ -27,47 +24,7 @@ const  Products = (props) => {
                         <h4>{item.title}</h4>
                         <p>{item.categorySlug}</p>
                         <p className='price'>{item.price}</p>
-                    </div>
-
-                    <div className="product_info_item">
-                        <div className="product_info_item_type">
-                            <h3>Select color</h3>
-                        </div>
-                        
-                        <div className="product_info_item_list">
-                            {item.colors.map((value,index) =>(
-                                <div 
-                                key={index}
-                                className={`product_info_item_list_item ${color === value ? 'active':''}`}
-                                >
-                                    <div className={`circle bg-${value}`} onClick={() =>{setColor(value)}}>
-                                        {console.log(color)}
-                                    </div>
-
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="product_info_item">
-                        <div className="product_info_item_type">
-                            <h3>Select size</h3>
-                        </div>
-                        
-                        <div className="product_info_item_list">
-                            {item.size.map((value,index) =>(
-                                <div 
-                                key={index}
-                                className={`product_info_item_list_item ${size === value ? 'active':''}`}>
-                                    <div className='circle'>
-                                        <div className="circle_size">{value}</div>
-                                    </div>
-
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                                
+                    </div>      
                             
                     <div className='btn' onClick={() => handleAddBaker(item)}>
                         <AddShoppingCartIcon className='btn_add'/>

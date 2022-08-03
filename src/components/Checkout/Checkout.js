@@ -2,9 +2,10 @@ import React from 'react'
 import './Checkout.scss'
 import Subtotal from '../Subtotal/Subtotal'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { Link } from 'react-router-dom';
 
 const Checkout = (props) => {
-    const {bakers, handleAddBakers, handleDelete, handleCheckout, color} = props
+    const {bakers, handleDetails, handleAddBakers, handleDelete, handleCheckout, color} = props
     console.log(color)
     return (
     <div className='Checkout'>
@@ -18,7 +19,6 @@ const Checkout = (props) => {
                 <tr className='head'>
                     <th>images</th>
                     <th>title</th>
-                    <th>type</th>
                     <th>price</th>
                     <th>quantity</th>
                     <th>ProductTotal</th>
@@ -26,18 +26,15 @@ const Checkout = (props) => {
                 </tr>
                 {bakers.map((item)=> 
                     <tr className='cart_product' key={item.id}>
-                        
-                            <td className='product-image '>
-                                <img src={item.image01} className="images" />
+                            
+                            <td className='product-image ' onClick={() => handleDetails(item.id)}>
+                                <Link to={`Products/${item.id}`}><img src={item.image01} className="images" /></Link>
                             </td>
-                            <td className='product-type '>
-                                <h4>{item.title}</h4>
+                            <td className='product-type ' onClick={() => handleDetails(item.id)}>
+                                <Link to={`Products/${item.id}`}><h4>{item.title}</h4></Link>
                                 
                             </td>
                             
-                            <td className='product-title '>
-                                <h4>{item.colors}</h4> 
-                            </td>
                             <td className='product-price '>
                                 {/* <p>{item.categorySlug}</p> */}
                                 <p>{item.price}</p>
